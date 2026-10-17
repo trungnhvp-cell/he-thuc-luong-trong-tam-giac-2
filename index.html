@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Trigonometric Values & Triangle Relations | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+<style>
+  :root{
+    --sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;
+    --sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;
+    --sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;
+    --shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+
+  /* ============ SAT SIMULATION NEW ============ */
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+
+  /* RESULT */
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){
+    .test-layout{grid-template-columns:1fr}
+    .test-sidebar{position:static}
+    .nav-grid{grid-template-columns:repeat(10,1fr)}
+    .result-hero{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    header{padding:14px 16px}
+    .brand-title{font-size:16px}
+    .header-credit{font-size:11.5px;padding:6px 12px;text-align:left}
+    .nav-btn{padding:14px 12px;font-size:13px}
+    main{padding:20px 12px 60px}
+    .card{padding:20px 18px}
+    .sat-hero{padding:24px 20px}
+    .timer{font-size:20px;padding:6px 14px;min-width:90px}
+    .hero{padding:26px 22px}
+    .hero h1{font-size:22px}
+    .page-title{font-size:22px}
+    .footer-inner{grid-template-columns:1fr;gap:24px}
+    footer{padding:28px 18px 20px}
+    .nav-grid{grid-template-columns:repeat(6,1fr)}
+    .wrong-item .ans-row{grid-template-columns:1fr}
+    .result-score .num{font-size:34px}
+    .test-topbar{position:static}
+    .test-sidebar{position:static}
+    .level-banner{flex-direction:column;gap:14px;padding:18px}
+    .level-icon{width:52px;height:52px;font-size:28px}
+    .level-content h3{font-size:18px}
+    .roadmap{padding:20px 18px}
+    .roadmap-phase{flex-direction:column;gap:12px}
+    .time-analysis{padding:18px;grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div>
+        <div class="brand-title">SAT Math Prep</div>
+        <div class="brand-sub">Trigonometric Values & Triangle Relations</div>
+      </div>
+    </div>
+    <div class="header-credit">
+      Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>
+      THPT Trần Phú • ☎ 0964 848 989
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Chinh phục SAT Math: Trigonometric Values & Triangle Relations</h1>
+    <p>Khóa ôn tập chuyên sâu chủ đề <strong>Giá trị lượng giác của một góc — Hệ thức lượng trong tam giác</strong> dành cho học sinh chuẩn bị kỳ thi <strong>Digital SAT</strong>. Nội dung song ngữ Việt–Anh, 40 từ vựng có phiên âm IPA, 30 câu luyện tập tức thì và <strong>3 bộ SAT Simulation × 30 câu = 90 câu</strong> với đồng hồ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p>
+    <div class="hero-author">
+      <div class="avatar">NT</div>
+      <div>
+        <strong>Thầy Nguyễn Hữu Trung</strong>
+        <span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')">
+      <div class="icon">📐</div>
+      <h4>1. Kiến thức cơ bản</h4>
+      <p>6 mục lý thuyết song ngữ: giá trị lượng giác, góc liên quan đặc biệt, đẳng thức cơ bản, định lý Sin, định lý Cosin, diện tích tam giác.</p>
+    </div>
+    <div class="home-card" onclick="switchTab('vocab')">
+      <div class="icon">📚</div>
+      <h4>2. Từ vựng chuyên ngành</h4>
+      <p>40 từ khóa SAT Math kèm phiên âm IPA, nghĩa tiếng Việt, ví dụ minh họa và phát âm tự động.</p>
+    </div>
+    <div class="home-card" onclick="switchTab('practice')">
+      <div class="icon">✏️</div>
+      <h4>3. Luyện tập 3 nhóm</h4>
+      <p>30 câu trắc nghiệm tiếng Anh chia 3 mức độ: Cơ bản — Trung bình — Nâng cao. Chấm điểm ngay, gợi ý ôn lại lý thuyết.</p>
+    </div>
+    <div class="home-card" onclick="switchTab('sat')">
+      <div class="icon">⏱️</div>
+      <h4>4. SAT Simulation — 3 bộ × 30 câu</h4>
+      <p>90 câu hỏi chuẩn Digital SAT, đồng hồ 45 phút/bộ, tổng kết điểm, phân tích câu sai theo chủ đề và lộ trình ôn tập cá nhân hóa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản cần nắm vững</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Dành cho học sinh phổ thông chuẩn bị thi SAT Digital</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Giá trị lượng giác của một góc (Trigonometric Values)</h3>
+    <table>
+      <tr><th>Tiếng Việt</th><th>English</th></tr>
+      <tr><td>Với góc \(\alpha\) (\(0°\leq\alpha\leq 180°\)), ta định nghĩa \(\sin\alpha,\ \cos\alpha,\ \tan\alpha\) dựa trên nửa đường tròn đơn vị.</td><td>For angle \(\alpha\) (\(0°\leq\alpha\leq 180°\)), \(\sin\alpha,\ \cos\alpha,\ \tan\alpha\) are defined on the unit semicircle.</td></tr>
+      <tr><td>Trong tam giác vuông: \(\sin = \dfrac{\text{đối}}{\text{huyền}}\), \(\cos = \dfrac{\text{kề}}{\text{huyền}}\), \(\tan = \dfrac{\text{đối}}{\text{kề}}\).</td><td>In a right triangle: \(\sin = \dfrac{\text{opposite}}{\text{hypotenuse}}\), \(\cos = \dfrac{\text{adjacent}}{\text{hypotenuse}}\), \(\tan = \dfrac{\text{opposite}}{\text{adjacent}}\).</td></tr>
+      <tr><td>\(-1\leq \sin\alpha\leq 1,\ -1\leq \cos\alpha\leq 1\).</td><td>\(-1\leq \sin\alpha\leq 1,\ -1\leq \cos\alpha\leq 1\).</td></tr>
+    </table>
+    <h4>Bảng giá trị lượng giác các góc đặc biệt (Table of Special Angles):</h4>
+    <table>
+      <tr><th>\(\alpha\)</th><th>\(0°\)</th><th>\(30°\)</th><th>\(45°\)</th><th>\(60°\)</th><th>\(90°\)</th><th>\(120°\)</th><th>\(135°\)</th><th>\(150°\)</th><th>\(180°\)</th></tr>
+      <tr><td>\(\sin\alpha\)</td><td>\(0\)</td><td>\(\frac{1}{2}\)</td><td>\(\frac{\sqrt{2}}{2}\)</td><td>\(\frac{\sqrt{3}}{2}\)</td><td>\(1\)</td><td>\(\frac{\sqrt{3}}{2}\)</td><td>\(\frac{\sqrt{2}}{2}\)</td><td>\(\frac{1}{2}\)</td><td>\(0\)</td></tr>
+      <tr><td>\(\cos\alpha\)</td><td>\(1\)</td><td>\(\frac{\sqrt{3}}{2}\)</td><td>\(\frac{\sqrt{2}}{2}\)</td><td>\(\frac{1}{2}\)</td><td>\(0\)</td><td>\(-\frac{1}{2}\)</td><td>\(-\frac{\sqrt{2}}{2}\)</td><td>\(-\frac{\sqrt{3}}{2}\)</td><td>\(-1\)</td></tr>
+      <tr><td>\(\tan\alpha\)</td><td>\(0\)</td><td>\(\frac{1}{\sqrt{3}}\)</td><td>\(1\)</td><td>\(\sqrt{3}\)</td><td>—</td><td>\(-\sqrt{3}\)</td><td>\(-1\)</td><td>\(-\frac{1}{\sqrt{3}}\)</td><td>\(0\)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Giá trị lượng giác của các góc liên quan đặc biệt (Related Angles)</h3>
+    <table>
+      <tr><th>Công thức (Vietnamese)</th><th>Formula (English)</th></tr>
+      <tr><td>Hai góc bù nhau: \(\sin(180°-\alpha)=\sin\alpha\) · \(\cos(180°-\alpha)=-\cos\alpha\) · \(\tan(180°-\alpha)=-\tan\alpha\).</td><td>Supplementary angles: \(\sin(180°-\alpha)=\sin\alpha\); \(\cos(180°-\alpha)=-\cos\alpha\).</td></tr>
+      <tr><td>Hai góc phụ nhau: \(\sin(90°-\alpha)=\cos\alpha\) · \(\cos(90°-\alpha)=\sin\alpha\).</td><td>Complementary angles: \(\sin(90°-\alpha)=\cos\alpha\); \(\cos(90°-\alpha)=\sin\alpha\).</td></tr>
+      <tr><td>Hai góc đối nhau: \(\sin(-\alpha)=-\sin\alpha\) · \(\cos(-\alpha)=\cos\alpha\).</td><td>Opposite angles: \(\sin(-\alpha)=-\sin\alpha\); \(\cos(-\alpha)=\cos\alpha\).</td></tr>
+      <tr><td>Hai góc hơn kém \(180°\): \(\sin(180°+\alpha)=-\sin\alpha\) · \(\cos(180°+\alpha)=-\cos\alpha\).</td><td>Angles differing by \(180°\): \(\sin(180°+\alpha)=-\sin\alpha\); \(\cos(180°+\alpha)=-\cos\alpha\).</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Đẳng thức lượng giác cơ bản (Fundamental Identities)</h3>
+    <div class="formula-box">\(\sin^2\alpha + \cos^2\alpha = 1\) &nbsp;&nbsp; (Pythagorean identity)</div>
+    <div class="formula-box">\(\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}\) &nbsp; (khi \(\cos\alpha \neq 0\)) &nbsp;·&nbsp; \(\cot\alpha = \dfrac{\cos\alpha}{\sin\alpha}\)</div>
+    <div class="formula-box">\(1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}\) &nbsp;·&nbsp; \(1 + \cot^2\alpha = \dfrac{1}{\sin^2\alpha}\)</div>
+    <div class="formula-box">\(\tan\alpha \cdot \cot\alpha = 1\)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Định lý Sin (Law of Sines)</h3>
+    <p>Cho tam giác \(ABC\) có các cạnh \(a=BC,\ b=CA,\ c=AB\) và \(R\) là bán kính đường tròn ngoại tiếp.</p>
+    <div class="formula-box"><strong>Law of Sines:</strong> &nbsp; \(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R\)</div>
+    <h4>Ứng dụng (Applications):</h4>
+    <ul>
+      <li>Tính cạnh khi biết 2 góc và 1 cạnh (AAS, ASA).</li>
+      <li>Tính góc khi biết 2 cạnh và 1 góc đối diện (SSA — trường hợp mơ hồ 0, 1, hoặc 2 nghiệm).</li>
+      <li>Tính bán kính đường tròn ngoại tiếp \(R = \dfrac{a}{2\sin A}\).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Định lý Cosin (Law of Cosines)</h3>
+    <div class="formula-box">
+      \(a^2 = b^2 + c^2 - 2bc\cos A\)<br>
+      \(b^2 = c^2 + a^2 - 2ca\cos B\)<br>
+      \(c^2 = a^2 + b^2 - 2ab\cos C\)
+    </div>
+    <h4>Hệ quả (Consequences):</h4>
+    <div class="formula-box">
+      \(\cos A = \dfrac{b^2 + c^2 - a^2}{2bc}\) &nbsp;·&nbsp; \(\cos B = \dfrac{c^2 + a^2 - b^2}{2ca}\) &nbsp;·&nbsp; \(\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}\)
+    </div>
+    <p><strong>Nhận xét:</strong> Nếu \(a^2 < b^2 + c^2\) thì góc \(A\) nhọn. Nếu \(a^2 = b^2 + c^2\) thì góc \(A\) vuông. Nếu \(a^2 > b^2 + c^2\) thì góc \(A\) tù.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VI</span> Diện tích tam giác &amp; Đường trung tuyến (Triangle Area &amp; Median)</h3>
+    <h4>Diện tích tam giác (Triangle Area):</h4>
+    <div class="formula-box">\(S = \dfrac{1}{2}ab\sin C = \dfrac{1}{2}bc\sin A = \dfrac{1}{2}ca\sin B\)</div>
+    <div class="formula-box">\(S = \dfrac{abc}{4R} = pr\) &nbsp; với \(p=\dfrac{a+b+c}{2}\) và \(r\) là bán kính đường tròn nội tiếp.</div>
+    <div class="formula-box"><strong>Heron's Formula:</strong> \(S = \sqrt{p(p-a)(p-b)(p-c)}\)</div>
+    <h4>Đường trung tuyến (Median):</h4>
+    <div class="formula-box">\(m_a^2 = \dfrac{2b^2 + 2c^2 - a^2}{4}\) &nbsp;·&nbsp; \(m_b^2 = \dfrac{2c^2 + 2a^2 - b^2}{4}\) &nbsp;·&nbsp; \(m_c^2 = \dfrac{2a^2 + 2b^2 - c^2}{4}\)</div>
+    <div class="formula-box"><strong>Định lý đường phân giác:</strong> Nếu \(AD\) là phân giác góc \(A\) thì \(\dfrac{BD}{DC} = \dfrac{AB}{AC}\).</div>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Hệ thống từ vựng SAT Math</h2>
+  <p class="page-subtitle">40 từ khóa chuyên ngành kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm</h2>
+  <p class="page-subtitle">30 câu hỏi tiếng Anh · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Mô phỏng cấu trúc Digital SAT Math · Đồng hồ 45 phút · Tổng kết & phân tích chi tiết</p>
+
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Trigonometric Values & Triangle Relations</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong>. Sau khi nộp bài, bạn nhận <strong>bảng tổng kết điểm</strong>, <strong>đánh giá năng lực</strong>, <strong>lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong> theo chủ đề.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+
+  <div id="satSetSelector" class="sat-set-selector"></div>
+
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head">
+            <div class="q-num" id="testQNum">1</div>
+            <div class="q-text" id="testQText"></div>
+          </div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về khóa học</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Trigonometric Values & Triangle Relations</strong> — Giá trị lượng giác của một góc, hệ thức lượng trong tam giác. Nội dung song ngữ Việt–Anh, phù hợp học sinh phổ thông chuẩn bị cho kỳ thi Digital SAT.</p>
+      <div class="footer-author-card">
+        <div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div>
+        <div class="role">Giáo viên Toán — THPT Trần Phú</div>
+        <div class="phone">📞 0964 848 989</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong> · Thiết kế web ôn thi SAT Math chuyên đề Trigonometric Values & Triangle Relations</p>
+    <p style="margin-top:6px">Made with ❤️ for high school students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   TAB SWITCHING
+============================================================ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector(`.nav-btn[data-tab="${tab}"]`).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>switchTab(btn.dataset.tab));
+});
+
+/* ============================================================
+   SOUND EFFECTS
+============================================================ */
+let audioCtx=null;
+function getCtx(){
+  if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  if(audioCtx.state==='suspended') audioCtx.resume();
+  return audioCtx;
+}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playTick(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='square';o.frequency.setValueAtTime(1200,ctx.currentTime);g.gain.setValueAtTime(0.05,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.05);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.06);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============================================================
+   VOCABULARY
+============================================================ */
+const vocab=[
+  ["Sine","/saɪn/","Sin — tỉ số đối/huyền","\\(\\sin 30° = \\dfrac{1}{2}\\)."],
+  ["Cosine","/ˈkoʊsaɪn/","Cos — tỉ số kề/huyền","\\(\\cos 60° = \\dfrac{1}{2}\\)."],
+  ["Tangent","/ˈtændʒənt/","Tan — tỉ số đối/kề","\\(\\tan 45° = 1\\)."],
+  ["Cotangent","/koʊˈtændʒənt/","Cot — tỉ số kề/đối","\\(\\cot 45° = 1\\)."],
+  ["Trigonometry","/ˌtrɪɡəˈnɒmətri/","Lượng giác","Study of triangles and angles."],
+  ["Angle","/ˈæŋɡl/","Góc","An acute angle is less than \\(90°\\)."],
+  ["Degree","/dɪˈɡriː/","Độ","\\(180° = \\pi\\) radians."],
+  ["Radian","/ˈreɪdiən/","Radian","One full circle is \\(2\\pi\\) radians."],
+  ["Acute angle","/əˈkjuːt ˈæŋɡl/","Góc nhọn","Acute angle: \\(0° < \\alpha < 90°\\)."],
+  ["Obtuse angle","/əbˈtjuːs ˈæŋɡl/","Góc tù","Obtuse angle: \\(90° < \\alpha < 180°\\)."],
+  ["Right angle","/raɪt ˈæŋɡl/","Góc vuông","Right angle = \\(90°\\)."],
+  ["Complementary","/ˌkɒmplɪˈmentri/","Phụ nhau","\\(\\alpha + \\beta = 90°\\)."],
+  ["Supplementary","/ˌsʌplɪˈmentri/","Bù nhau","\\(\\alpha + \\beta = 180°\\)."],
+  ["Triangle","/ˈtraɪæŋɡl/","Tam giác","The sum of angles is \\(180°\\)."],
+  ["Equilateral triangle","/ˌiːkwɪˈlætərəl ˈtraɪæŋɡl/","Tam giác đều","All sides equal."],
+  ["Isosceles triangle","/aɪˈsɒsəliːz ˈtraɪæŋɡl/","Tam giác cân","Two sides equal."],
+  ["Right triangle","/raɪt ˈtraɪæŋɡl/","Tam giác vuông","One angle is \\(90°\\)."],
+  ["Hypotenuse","/haɪˈpɒtənjuːz/","Cạnh huyền","The longest side of a right triangle."],
+  ["Opposite side","/ˈɒpəzɪt saɪd/","Cạnh đối","The side across from an angle."],
+  ["Adjacent side","/əˈdʒeɪsnt saɪd/","Cạnh kề","The side next to an angle."],
+  ["Law of Sines","/lɔː əv saɪnz/","Định lý Sin","\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}\\)."],
+  ["Law of Cosines","/lɔː əv ˈkoʊsaɪnz/","Định lý Cosin","\\(a^2=b^2+c^2-2bc\\cos A\\)."],
+  ["Identity","/aɪˈdentəti/","Đẳng thức","\\(\\sin^2\\alpha+\\cos^2\\alpha=1\\)."],
+  ["Pythagorean","/pəˌθæɡəˈriːən/","Pythagoras","\\(a^2+b^2=c^2\\)."],
+  ["Perimeter","/pəˈrɪmɪtər/","Chu vi","The perimeter of a triangle."],
+  ["Area","/ˈeəriə/","Diện tích","\\(S=\\dfrac{1}{2}ab\\sin C\\)."],
+  ["Semiperimeter","/ˌsemiˈpərɪmɪtər/","Nửa chu vi","\\(p=\\dfrac{a+b+c}{2}\\)."],
+  ["Circumradius","/ˌsɜːrkəmˈreɪdiəs/","Bán kính ngoại tiếp","\\(R=\\dfrac{a}{2\\sin A}\\)."],
+  ["Inradius","/ɪnˈreɪdiəs/","Bán kính nội tiếp","\\(S=pr\\)."],
+  ["Median","/ˈmiːdiən/","Trung tuyến","Line from vertex to midpoint of opposite side."],
+  ["Altitude","/ˈæltɪtjuːd/","Đường cao","\\(S=\\dfrac{1}{2}\\cdot\\text{base}\\cdot\\text{height}\\)."],
+  ["Bisector","/baɪˈsektər/","Đường phân giác","Angle bisector theorem."],
+  ["Vertex","/ˈvɜːrteks/","Đỉnh","The vertex of the triangle."],
+  ["Interior angle","/ɪnˈtɪəriər ˈæŋɡl/","Góc trong","Sum is \\(180°\\) in a triangle."],
+  ["Exterior angle","/ɪkˈstɪəriər ˈæŋɡl/","Góc ngoài","Equal to sum of two remote interior angles."],
+  ["Heron's formula","/ˈhɪərɒnz ˈfɔːrmjələ/","Công thức Heron","\\(S=\\sqrt{p(p-a)(p-b)(p-c)}\\)."],
+  ["Simplify","/ˈsɪmplɪfaɪ/","Đơn giản hóa","Simplify the expression."],
+  ["Evaluate","/ɪˈvæljueɪt/","Tính toán","Evaluate \\(\\sin 30°\\)."],
+  ["Solve","/sɒlv/","Giải","Solve the triangle."],
+  ["Verify","/ˈverɪfaɪ/","Chứng minh","Verify the identity."]
+];
+
+function renderVocab(filter=""){
+  const tbody=document.querySelector('#vocabTable tbody');
+  tbody.innerHTML='';
+  const f=filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && !(v[0].toLowerCase().includes(f)||v[2].toLowerCase().includes(f))) return;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${i+1}</td><td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td><td>${v[3]}</td><td><button class="speak-btn" data-word="${v[0]}" title="Phát âm">🔊</button></td>`;
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement){renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.getElementById('vocabSearch').addEventListener('input',e=>renderVocab(e.target.value));
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('speak-btn')){
+    const word=e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============================================================
+   PRACTICE DATA — 30 QUESTIONS
+============================================================ */
+const practiceData={
+  1:[
+    {q:"What is the value of \\(\\sin 30°\\)?",opts:["\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(1\\)"],ans:1,exp:"From the special angles table, \\(\\sin 30° = \\dfrac{1}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác đặc biệt"},
+    {q:"What is the value of \\(\\cos 60°\\)?",opts:["\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(0\\)"],ans:0,exp:"\\(\\cos 60° = \\dfrac{1}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác đặc biệt"},
+    {q:"What is \\(\\tan 45°\\)?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\sqrt{3}\\)"],ans:2,exp:"\\(\\tan 45° = \\dfrac{\\sin 45°}{\\cos 45°} = 1\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác đặc biệt"},
+    {q:"Which identity is always true for any angle \\(\\alpha\\)?",opts:["\\(\\sin^2\\alpha - \\cos^2\\alpha = 1\\)","\\(\\sin^2\\alpha + \\cos^2\\alpha = 1\\)","\\(\\sin\\alpha + \\cos\\alpha = 1\\)","\\(\\sin\\alpha \\cdot \\cos\\alpha = 1\\)"],ans:1,exp:"Fundamental identity: \\(\\sin^2\\alpha + \\cos^2\\alpha = 1\\).",review:"Ôn lại mục III — Đẳng thức lượng giác"},
+    {q:"If \\(\\sin(180°-\\alpha) = \\sin\\alpha\\), then \\(\\sin 150° =\\) ?",opts:["\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)"],ans:1,exp:"\\(\\sin 150° = \\sin(180° - 30°) = \\sin 30° = \\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+    {q:"Which of the following is the Law of Sines?",opts:["\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B} = \\dfrac{c}{\\sin C}\\)","\\(a^2 = b^2 + c^2 - 2bc\\cos A\\)","\\(S = \\dfrac{1}{2}ab\\sin C\\)","\\(a^2 + b^2 = c^2\\)"],ans:0,exp:"Law of Sines: \\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B} = \\dfrac{c}{\\sin C} = 2R\\).",review:"Ôn lại mục IV — Định lý Sin"},
+    {q:"Which of the following is the Law of Cosines?",opts:["\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}\\)","\\(a^2 = b^2 + c^2 - 2bc\\cos A\\)","\\(S = pr\\)","\\(a+b > c\\)"],ans:1,exp:"Law of Cosines: \\(a^2 = b^2 + c^2 - 2bc\\cos A\\).",review:"Ôn lại mục V — Định lý Cosin"},
+    {q:"What is \\(\\tan 30°\\)?",opts:["\\(\\dfrac{1}{\\sqrt{3}}\\)","\\(1\\)","\\(\\sqrt{3}\\)","\\(\\dfrac{1}{2}\\)"],ans:0,exp:"\\(\\tan 30° = \\dfrac{\\sin 30°}{\\cos 30°} = \\dfrac{1/2}{\\sqrt{3}/2} = \\dfrac{1}{\\sqrt{3}}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác đặc biệt"},
+    {q:"Which relation holds for complementary angles?",opts:["\\(\\sin(90°-\\alpha) = \\sin\\alpha\\)","\\(\\sin(90°-\\alpha) = \\cos\\alpha\\)","\\(\\cos(90°-\\alpha) = \\cos\\alpha\\)","\\(\\tan(90°-\\alpha) = \\tan\\alpha\\)"],ans:1,exp:"For complementary angles: \\(\\sin(90°-\\alpha) = \\cos\\alpha\\).",review:"Ôn lại mục II — Hai góc phụ nhau"},
+    {q:"In a right triangle, hypotenuse is 10 and one leg is 6. What is \\(\\sin\\) of the angle opposite the leg of length 6?",opts:["\\(\\dfrac{6}{10}\\)","\\(\\dfrac{8}{10}\\)","\\(\\dfrac{6}{8}\\)","\\(\\dfrac{10}{6}\\)"],ans:0,exp:"\\(\\sin\\theta = \\dfrac{\\text{opposite}}{\\text{hypotenuse}} = \\dfrac{6}{10} = \\dfrac{3}{5}\\).",review:"Ôn lại mục I — Định nghĩa sin"}
+  ],
+  2:[
+    {q:"What is \\(\\sin 150°\\)?",opts:["\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)"],ans:1,exp:"\\(\\sin 150° = \\sin 30° = \\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+    {q:"What is \\(\\cos 120°\\)?",opts:["\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)"],ans:1,exp:"\\(\\cos 120° = -\\cos 60° = -\\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+    {q:"The area of a triangle with sides \\(a=4,\\ b=6\\) and included angle \\(C=30°\\) is:",opts:["\\(6\\)","\\(8\\)","\\(12\\)","\\(24\\)"],ans:0,exp:"\\(S = \\dfrac{1}{2}(4)(6)\\sin 30° = 12\\cdot\\dfrac{1}{2}=6\\).",review:"Ôn lại mục VI — Diện tích tam giác"},
+    {q:"In triangle \\(ABC\\), \\(A=30°,\\ B=45°,\\ a=10\\). Using the Law of Sines, what is \\(b\\)?",opts:["\\(10\\sqrt{2}\\)","\\(5\\sqrt{2}\\)","\\(10\\sqrt{3}\\)","\\(5\\sqrt{3}\\)"],ans:0,exp:"\\(b = \\dfrac{10\\cdot(\\sqrt{2}/2)}{1/2}=10\\sqrt{2}\\).",review:"Ôn lại mục IV — Định lý Sin"},
+    {q:"In triangle \\(ABC\\), \\(a=5,\\ b=7,\\ C=60°\\). What is \\(c^2\\)?",opts:["\\(24\\)","\\(39\\)","\\(74\\)","\\(109\\)"],ans:1,exp:"\\(c^2 = 25 + 49 - 2(5)(7)(0.5) = 39\\).",review:"Ôn lại mục V — Định lý Cosin"},
+    {q:"What is \\(\\sin 45° + \\cos 45°\\)?",opts:["\\(\\sqrt{2}\\)","\\(1\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(2\\)"],ans:0,exp:"\\(\\sin 45° = \\cos 45° = \\dfrac{\\sqrt{2}}{2}\\), sum is \\(\\sqrt{2}\\).",review:"Ôn lại mục I — Bảng giá trị"},
+    {q:"Simplify: \\(\\dfrac{\\sin^2\\alpha}{\\cos^2\\alpha} + 1\\) (assuming \\(\\cos\\alpha \\neq 0\\)).",opts:["\\(\\dfrac{1}{\\cos^2\\alpha}\\)","\\(\\dfrac{1}{\\sin^2\\alpha}\\)","\\(1\\)","\\(\\tan^2\\alpha\\)"],ans:0,exp:"\\(\\tan^2\\alpha + 1 = \\dfrac{1}{\\cos^2\\alpha}\\).",review:"Ôn lại mục III — Đẳng thức lượng giác"},
+    {q:"Given \\(\\sin\\alpha = \\dfrac{3}{5}\\) and \\(\\alpha\\) acute, what is \\(\\cos\\alpha\\)?",opts:["\\(\\dfrac{3}{4}\\)","\\(\\dfrac{4}{5}\\)","\\(\\dfrac{5}{4}\\)","\\(\\dfrac{5}{3}\\)"],ans:1,exp:"\\(\\cos\\alpha = \\sqrt{1-9/25}=\\dfrac{4}{5}\\).",review:"Ôn lại mục III — Đẳng thức \\(\\sin^2+\\cos^2=1\\)"},
+    {q:"A triangular garden has sides 8 m, 10 m, and 12 m. Its area (Heron) is approximately:",opts:["\\(39.7\\)","\\(45.2\\)","\\(50.4\\)","\\(56.8\\)"],ans:0,exp:"\\(p=15\\), \\(S=\\sqrt{15\\cdot 7\\cdot 5\\cdot 3}=\\sqrt{1575}\\approx 39.7\\).",review:"Ôn lại mục VI — Công thức Heron"},
+    {q:"The circumradius \\(R\\) of a triangle with side \\(a=10\\) and angle \\(A=30°\\) is:",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:1,exp:"\\(R = \\dfrac{10}{2\\cdot 0.5}=10\\).",review:"Ôn lại mục IV — Công thức \\(R = a/(2\\sin A)\\)"}
+  ],
+  3:[
+    {q:"In triangle \\(ABC\\), \\(a=8,\\ b=10,\\ A=30°\\). How many possible triangles satisfy these conditions?",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(3\\)"],ans:2,exp:"\\(\\sin B = \\dfrac{10\\cdot 0.5}{8} = 0.625 < 1\\). Vì \\(b>a\\) nên có 2 nghiệm (SSA ambiguous case).",review:"Ôn lại mục IV — Trường hợp SSA"},
+    {q:"A triangle has sides \\(a=6,\\ b=8,\\ c=10\\). The median to side \\(a\\) has length:",opts:["\\(\\sqrt{46}\\)","\\(\\sqrt{52}\\)","\\(\\sqrt{62}\\)","\\(\\sqrt{73}\\)"],ans:3,exp:"\\(m_a^2 = \\dfrac{2\\cdot 64+2\\cdot 100-36}{4} = 73\\), so \\(m_a=\\sqrt{73}\\).",review:"Ôn lại mục VI — Công thức trung tuyến"},
+    {q:"Simplify: \\((1+\\tan^2\\alpha)(1-\\sin^2\\alpha)\\).",opts:["\\(1\\)","\\(\\sin^2\\alpha\\)","\\(\\cos^2\\alpha\\)","\\(\\tan^2\\alpha\\)"],ans:0,exp:"\\(\\dfrac{1}{\\cos^2\\alpha}\\cdot\\cos^2\\alpha=1\\).",review:"Ôn lại mục III — Đẳng thức lượng giác"},
+    {q:"In triangle \\(ABC\\), \\(a=7,\\ b=8,\\ c=9\\). What is \\(\\cos A\\)?",opts:["\\(\\dfrac{2}{3}\\)","\\(\\dfrac{3}{4}\\)","\\(\\dfrac{4}{5}\\)","\\(\\dfrac{5}{6}\\)"],ans:0,exp:"\\(\\cos A = \\dfrac{64+81-49}{2\\cdot 8\\cdot 9}=\\dfrac{96}{144}=\\dfrac{2}{3}\\).",review:"Ôn lại mục V — Hệ quả định lý Cosin"},
+    {q:"An observer at \\(A\\) sees \\(B\\) at bearing \\(30°\\) (distance 100 m). From \\(B\\), point \\(C\\) lies at bearing \\(120°\\) (BC=80 m). What is \\(AC\\) approximately?",opts:["\\(110.4\\)","\\(128.1\\)","\\(134.5\\)","\\(146.9\\)"],ans:1,exp:"Góc \\(B=90°\\). \\(AC^2 = 100^2+80^2 = 16400\\), \\(AC \\approx 128.06\\).",review:"Ôn lại mục V — Định lý Cosin ứng dụng"},
+    {q:"Find \\(\\sin\\alpha\\) if \\(\\cos\\alpha = -\\dfrac{4}{5}\\) and \\(90°<\\alpha<180°\\).",opts:["\\(-\\dfrac{3}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(-\\dfrac{4}{5}\\)","\\(\\dfrac{4}{5}\\)"],ans:1,exp:"\\(\\alpha\\) ở Q2 nên \\(\\sin\\alpha = +\\sqrt{1-16/25}=\\dfrac{3}{5}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+    {q:"If \\(\\tan\\alpha = 2\\) and \\(\\alpha\\) acute, find \\(\\dfrac{\\sin\\alpha + \\cos\\alpha}{\\sin\\alpha - \\cos\\alpha}\\).",opts:["\\(-3\\)","\\(3\\)","\\(1\\)","\\(-1\\)"],ans:1,exp:"Chia cả tử và mẫu cho \\(\\cos\\alpha\\): \\(\\dfrac{\\tan\\alpha+1}{\\tan\\alpha-1}=\\dfrac{3}{1}=3\\).",review:"Ôn lại mục III — Đẳng thức \\(\\tan=\\sin/\\cos\\)"},
+    {q:"Two sides of a triangle are 6 and 8, included angle 60°. Area is:",opts:["\\(12\\sqrt{3}\\)","\\(24\\sqrt{3}\\)","\\(12\\)","\\(24\\)"],ans:0,exp:"\\(S=\\dfrac{1}{2}\\cdot 6\\cdot 8\\cdot\\dfrac{\\sqrt{3}}{2}=12\\sqrt{3}\\).",review:"Ôn lại mục VI — Diện tích tam giác"},
+    {q:"In triangle \\(ABC\\), angle bisector from \\(A\\) meets \\(BC\\) at \\(D\\). If \\(AB=6,\\ AC=9,\\ BC=10\\), what is \\(BD\\)?",opts:["\\(3\\)","\\(4\\)","\\(5\\)","\\(6\\)"],ans:1,exp:"\\(BD/DC = 6/9 = 2/3\\). \\(BD = \\dfrac{2}{5}\\cdot 10 = 4\\).",review:"Ôn lại mục VI — Định lý đường phân giác"},
+    {q:"If \\(\\sin\\alpha + \\cos\\alpha = \\sqrt{2}\\) (acute), then \\(\\sin\\alpha\\cdot\\cos\\alpha =\\) ?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\sqrt{2}\\)"],ans:1,exp:"Bình phương: \\(1+2\\sin\\alpha\\cos\\alpha=2 \\Rightarrow \\sin\\alpha\\cos\\alpha=\\dfrac{1}{2}\\).",review:"Ôn lại mục III — Đẳng thức lượng giác"}
+  ]
+};
+
+const letterMap=['A','B','C','D'];
+const practiceState={1:{},2:{},3:{}};
+
+function renderPractice(group){
+  const container=document.getElementById('panel-'+group);
+  container.innerHTML='';
+  practiceData[group].forEach((item,idx)=>{
+    const card=document.createElement('div');
+    card.className='q-card';card.id=`g${group}q${idx}`;
+    let optsHtml='';
+    item.opts.forEach((o,i)=>{optsHtml+=`<button class="option" data-group="${group}" data-q="${idx}" data-opt="${i}"><span class="letter">${letterMap[i]}</span><span class="opt-text">${o}</span></button>`;});
+    card.innerHTML=`<div class="q-head"><div class="q-num">${idx+1}</div><div class="q-text">${item.q}</div></div><div class="options">${optsHtml}</div><div class="feedback" id="fb-${group}-${idx}"></div>`;
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.querySelectorAll('.group-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.group-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.group-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.option');
+  if(!btn||btn.classList.contains('disabled')) return;
+  const group=btn.dataset.group;if(!group) return;
+  const qIdx=+btn.dataset.q, optIdx=+btn.dataset.opt;
+  const card=document.getElementById(`g${group}q${qIdx}`);
+  const item=practiceData[group][qIdx];
+  const fb=document.getElementById(`fb-${group}-${qIdx}`);
+  const allOpts=card.querySelectorAll('.option');
+  allOpts.forEach(o=>o.classList.add('disabled'));
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect=optIdx===item.ans;
+  if(!isCorrect){btn.classList.add('wrong');}
+  card.classList.add(isCorrect?'correct':'wrong');
+  if(practiceState[group][qIdx]===undefined) practiceState[group][qIdx]=isCorrect;
+  fb.className='feedback show '+(isCorrect?'ok':'no');
+  if(isCorrect){fb.innerHTML=`<strong>✅ Correct!</strong>${item.exp}<div class="review">💡 ${item.review}</div>`;playDing();}
+  else{fb.innerHTML=`<strong>❌ Incorrect. Correct answer: ${letterMap[item.ans]}</strong>${item.exp}<div class="review">📖 Ôn tập lại: ${item.review}</div>`;playBuzz();}
+});
+
+/* ============================================================
+   SAT SIMULATION DATA — 3 SETS × 30 QUESTIONS
+============================================================ */
+const TOPICS = {
+  TRIG:    "Giá trị lượng giác",
+  IDENT:   "Đẳng thức lượng giác",
+  RELATED: "Góc liên quan đặc biệt",
+  SINE:    "Định lý Sin",
+  COSINE:  "Định lý Cosin",
+  AREA:    "Diện tích & Trung tuyến",
+  APP:     "Ứng dụng thực tế"
+};
+
+const TOPIC_RECOMMENDATIONS = {
+  TRIG: "Học thuộc bảng giá trị lượng giác các góc đặc biệt (0°, 30°, 45°, 60°, 90°, 120°, 135°, 150°, 180°). Ôn lại định nghĩa sin/cos/tan trong tam giác vuông.",
+  IDENT: "Ghi nhớ \\(\\sin^2\\alpha+\\cos^2\\alpha=1\\), \\(\\tan\\alpha=\\sin\\alpha/\\cos\\alpha\\), \\(1+\\tan^2\\alpha=1/\\cos^2\\alpha\\). Luyện rút gọn biểu thức.",
+  RELATED: "Nắm vững: \\(\\sin(180°-\\alpha)=\\sin\\alpha\\), \\(\\cos(180°-\\alpha)=-\\cos\\alpha\\), \\(\\sin(90°-\\alpha)=\\cos\\alpha\\).",
+  SINE: "Áp dụng \\(a/\\sin A = b/\\sin B = c/\\sin C = 2R\\). Chú ý trường hợp SSA có 0, 1, hoặc 2 nghiệm.",
+  COSINE: "Ghi nhớ \\(a^2=b^2+c^2-2bc\\cos A\\) và hệ quả \\(\\cos A=(b^2+c^2-a^2)/(2bc)\\). Dùng để nhận dạng góc nhọn/vuông/tù.",
+  AREA: "S = ½ab·sinC; S = abc/(4R); S = pr; công thức Heron; công thức trung tuyến \\(m_a^2=(2b^2+2c^2-a^2)/4\\).",
+  APP: "Xác định đúng đại lượng cần tìm và chọn định lý phù hợp: Sin khi biết cạnh-góc đối, Cosin khi biết 2 cạnh + góc xen giữa hoặc 3 cạnh."
+};
+
+const SAT_SETS = {
+  1: {
+    name: "Bộ 1 — Foundations",
+    desc: "Giá trị lượng giác cơ bản, bảng góc đặc biệt, định nghĩa sin/cos/tan, đẳng thức cơ bản, làm quen định lý Sin/Cosin.",
+    questions: [
+      {q:"What is the value of \\(\\sin 30°\\)?",opts:["\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(1\\)"],ans:1,topic:"TRIG",exp:"Từ bảng góc đặc biệt: \\(\\sin 30° = \\dfrac{1}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"What is the value of \\(\\cos 60°\\)?",opts:["\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(0\\)"],ans:0,topic:"TRIG",exp:"\\(\\cos 60° = \\dfrac{1}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"What is \\(\\tan 45°\\)?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\sqrt{3}\\)"],ans:2,topic:"TRIG",exp:"\\(\\tan 45° = \\dfrac{\\sin 45°}{\\cos 45°}=1\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\sin 0° =\\) ?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)"],ans:0,topic:"TRIG",exp:"\\(\\sin 0° = 0\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\cos 90° =\\) ?",opts:["\\(1\\)","\\(0\\)","\\(-1\\)","\\(\\dfrac{1}{2}\\)"],ans:1,topic:"TRIG",exp:"\\(\\cos 90° = 0\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\sin 90° =\\) ?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)"],ans:2,topic:"TRIG",exp:"\\(\\sin 90° = 1\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\cos 0° =\\) ?",opts:["\\(1\\)","\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)"],ans:0,topic:"TRIG",exp:"\\(\\cos 0° = 1\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\tan 60° =\\) ?",opts:["\\(1\\)","\\(\\dfrac{\\sqrt{3}}{3}\\)","\\(\\dfrac{1}{2}\\)","\\(\\sqrt{3}\\)"],ans:3,topic:"TRIG",exp:"\\(\\tan 60° = \\sqrt{3}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\sin 45° =\\) ?",opts:["\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(1\\)"],ans:1,topic:"TRIG",exp:"\\(\\sin 45° = \\dfrac{\\sqrt{2}}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\cos 30° =\\) ?",opts:["\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(1\\)"],ans:2,topic:"TRIG",exp:"\\(\\cos 30° = \\dfrac{\\sqrt{3}}{2}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\sin^2\\alpha + \\cos^2\\alpha =\\) ?",opts:["\\(1\\)","\\(0\\)","\\(2\\)","\\(\\sin 2\\alpha\\)"],ans:0,topic:"IDENT",exp:"Đẳng thức Pythagoras: \\(\\sin^2\\alpha+\\cos^2\\alpha=1\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"\\(\\sin 120° =\\) ?",opts:["\\(-\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{1}{2}\\)"],ans:2,topic:"RELATED",exp:"\\(\\sin 120° = \\sin(180°-60°) = \\sin 60° = \\dfrac{\\sqrt{3}}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\cos 120° =\\) ?",opts:["\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)"],ans:1,topic:"RELATED",exp:"\\(\\cos 120° = -\\cos 60° = -\\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\sin 150° =\\) ?",opts:["\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)"],ans:0,topic:"RELATED",exp:"\\(\\sin 150° = \\sin 30° = \\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\cos 180° =\\) ?",opts:["\\(0\\)","\\(1\\)","\\(-\\dfrac{1}{2}\\)","\\(-1\\)"],ans:3,topic:"TRIG",exp:"\\(\\cos 180° = -1\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\sin 180° =\\) ?",opts:["\\(0\\)","\\(1\\)","\\(-1\\)","\\(\\dfrac{1}{2}\\)"],ans:0,topic:"TRIG",exp:"\\(\\sin 180° = 0\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"\\(\\tan 30° =\\) ?",opts:["\\(\\dfrac{\\sqrt{3}}{3}\\)","\\(1\\)","\\(\\sqrt{3}\\)","\\(\\dfrac{1}{2}\\)"],ans:0,topic:"TRIG",exp:"\\(\\tan 30° = \\dfrac{\\sin 30°}{\\cos 30°} = \\dfrac{\\sqrt{3}}{3}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"In a right triangle, opposite side = 3, hypotenuse = 5. \\(\\sin\\theta =\\) ?",opts:["\\(\\dfrac{4}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{5}{3}\\)","\\(\\dfrac{5}{4}\\)"],ans:1,topic:"TRIG",exp:"\\(\\sin\\theta = \\dfrac{\\text{opposite}}{\\text{hypotenuse}} = \\dfrac{3}{5}\\).",review:"Ôn lại mục I — Định nghĩa sin"},
+      {q:"In a right triangle, adjacent side = 4, hypotenuse = 5. \\(\\cos\\theta =\\) ?",opts:["\\(\\dfrac{4}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{5}{4}\\)","\\(\\dfrac{5}{3}\\)"],ans:0,topic:"TRIG",exp:"\\(\\cos\\theta = \\dfrac{\\text{adjacent}}{\\text{hypotenuse}} = \\dfrac{4}{5}\\).",review:"Ôn lại mục I — Định nghĩa cos"},
+      {q:"\\(\\sin(180° - \\alpha) =\\) ?",opts:["\\(-\\sin\\alpha\\)","\\(\\sin\\alpha\\)","\\(\\cos\\alpha\\)","\\(-\\cos\\alpha\\)"],ans:1,topic:"RELATED",exp:"Hai góc bù nhau: \\(\\sin(180°-\\alpha)=\\sin\\alpha\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\cos(180° - \\alpha) =\\) ?",opts:["\\(\\cos\\alpha\\)","\\(-\\sin\\alpha\\)","\\(\\sin\\alpha\\)","\\(-\\cos\\alpha\\)"],ans:3,topic:"RELATED",exp:"Hai góc bù nhau: \\(\\cos(180°-\\alpha)=-\\cos\\alpha\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\sin(90° - \\alpha) =\\) ?",opts:["\\(\\sin\\alpha\\)","\\(-\\sin\\alpha\\)","\\(\\cos\\alpha\\)","\\(-\\cos\\alpha\\)"],ans:2,topic:"RELATED",exp:"Hai góc phụ nhau: \\(\\sin(90°-\\alpha)=\\cos\\alpha\\).",review:"Ôn lại mục II — Hai góc phụ nhau"},
+      {q:"If \\(\\sin\\alpha = \\dfrac{3}{5}\\) (\\(0°<\\alpha<90°\\)), then \\(\\cos\\alpha =\\) ?",opts:["\\(\\dfrac{3}{4}\\)","\\(\\dfrac{4}{5}\\)","\\(\\dfrac{5}{4}\\)","\\(\\dfrac{5}{3}\\)"],ans:1,topic:"IDENT",exp:"\\(\\cos\\alpha = \\sqrt{1-9/25} = \\dfrac{4}{5}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Which formula is the Law of Sines?",opts:["\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B} = \\dfrac{c}{\\sin C}\\)","\\(b\\cdot\\sin B\\)","\\(b\\cdot\\cos B\\)","\\(\\dfrac{b^2}{\\sin B}\\)"],ans:0,topic:"SINE",exp:"\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B} = \\dfrac{c}{\\sin C} = 2R\\).",review:"Ôn lại mục IV — Định lý Sin"},
+      {q:"Which formula is the Law of Cosines?",opts:["\\(b^2 + c^2 + 2bc\\cos A\\)","\\(b^2 + c^2\\)","\\(b^2 + c^2 - 2bc\\cos A\\)","\\(b^2 - c^2 + 2bc\\cos A\\)"],ans:2,topic:"COSINE",exp:"\\(a^2 = b^2 + c^2 - 2bc\\cos A\\).",review:"Ôn lại mục V — Định lý Cosin"},
+      {q:"Area of triangle with two sides \\(a, b\\) and included angle \\(C\\):",opts:["\\(\\dfrac{1}{2}ab\\sin C\\)","\\(\\dfrac{1}{2}ab\\cos C\\)","\\(\\dfrac{1}{2}(a+b)\\sin C\\)","\\(ab\\sin C\\)"],ans:0,topic:"AREA",exp:"\\(S = \\dfrac{1}{2}ab\\sin C\\).",review:"Ôn lại mục VI — Diện tích tam giác"},
+      {q:"\\(\\tan\\alpha =\\) ? (assuming \\(\\cos\\alpha \\neq 0\\))",opts:["\\(\\dfrac{\\cos\\alpha}{\\sin\\alpha}\\)","\\(\\dfrac{1}{\\sin\\alpha}\\)","\\(\\dfrac{\\sin\\alpha}{\\cos\\alpha}\\)","\\(\\dfrac{1}{\\cos\\alpha}\\)"],ans:2,topic:"IDENT",exp:"\\(\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"If \\(\\cos\\alpha = \\dfrac{5}{13}\\) (\\(0°<\\alpha<90°\\)), then \\(\\sin\\alpha =\\) ?",opts:["\\(\\dfrac{5}{12}\\)","\\(\\dfrac{12}{13}\\)","\\(\\dfrac{5}{13}\\)","\\(\\dfrac{12}{5}\\)"],ans:1,topic:"IDENT",exp:"\\(\\sin\\alpha = \\sqrt{1-25/169} = \\dfrac{12}{13}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"\\(\\sin 60° + \\cos 30° =\\) ?",opts:["\\(1\\)","\\(\\sqrt{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(\\sqrt{3}\\)"],ans:3,topic:"TRIG",exp:"\\(\\dfrac{\\sqrt{3}}{2} + \\dfrac{\\sqrt{3}}{2} = \\sqrt{3}\\).",review:"Ôn lại mục I — Bảng giá trị lượng giác"},
+      {q:"In a right triangle, opposite = 8, adjacent = 15. \\(\\tan\\theta =\\) ?",opts:["\\(\\dfrac{8}{15}\\)","\\(\\dfrac{15}{8}\\)","\\(\\dfrac{15}{17}\\)","\\(\\dfrac{8}{17}\\)"],ans:0,topic:"TRIG",exp:"\\(\\tan\\theta = \\dfrac{\\text{opposite}}{\\text{adjacent}} = \\dfrac{8}{15}\\).",review:"Ôn lại mục I — Định nghĩa tan"}
+    ]
+  },
+  2: {
+    name: "Bộ 2 — Intermediate",
+    desc: "Góc liên quan đặc biệt, đẳng thức biến đổi, định lý Sin và Cosin, tính diện tích, bán kính ngoại tiếp, trường hợp mơ hồ SSA.",
+    questions: [
+      {q:"\\(\\sin 135° =\\) ?",opts:["\\(-\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)"],ans:1,topic:"RELATED",exp:"\\(\\sin 135° = \\sin(180°-45°) = \\dfrac{\\sqrt{2}}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\cos 135° =\\) ?",opts:["\\(\\dfrac{\\sqrt{2}}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(-\\dfrac{\\sqrt{2}}{2}\\)"],ans:3,topic:"RELATED",exp:"\\(\\cos 135° = -\\cos 45° = -\\dfrac{\\sqrt{2}}{2}\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\tan 135° =\\) ?",opts:["\\(1\\)","\\(\\sqrt{3}\\)","\\(-1\\)","\\(-\\sqrt{3}\\)"],ans:2,topic:"RELATED",exp:"\\(\\tan 135° = -\\tan 45° = -1\\).",review:"Ôn lại mục II — Hai góc bù nhau"},
+      {q:"\\(\\sin 210° =\\) ?",opts:["\\(-\\dfrac{1}{2}\\)","\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)"],ans:0,topic:"RELATED",exp:"\\(\\sin 210° = -\\sin 30° = -\\dfrac{1}{2}\\).",review:"Ôn lại mục II — Hai góc hơn kém 180°"},
+      {q:"\\(\\cos 210° =\\) ?",opts:["\\(\\dfrac{1}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{2}\\)"],ans:2,topic:"RELATED",exp:"\\(\\cos 210° = -\\cos 30° = -\\dfrac{\\sqrt{3}}{2}\\).",review:"Ôn lại mục II — Hai góc hơn kém 180°"},
+      {q:"Triangle: \\(a=5,\\ b=7,\\ C=60°\\). \\(c^2 =\\) ?",opts:["\\(24\\)","\\(39\\)","\\(74\\)","\\(109\\)"],ans:1,topic:"COSINE",exp:"\\(c^2 = 25+49-2(5)(7)(0.5) = 39\\).",review:"Ôn lại mục V — Định lý Cosin"},
+      {q:"Triangle: \\(a=4,\\ b=6,\\ C=30°\\). Area = ?",opts:["\\(6\\)","\\(8\\)","\\(12\\)","\\(24\\)"],ans:0,topic:"AREA",exp:"\\(S = \\dfrac{1}{2}\\cdot 4\\cdot 6\\cdot \\dfrac{1}{2} = 6\\).",review:"Ôn lại mục VI — Diện tích tam giác"},
+      {q:"If \\(\\tan\\alpha = \\dfrac{3}{4}\\) (\\(\\alpha\\) acute), then \\(\\sin\\alpha =\\) ?",opts:["\\(\\dfrac{3}{4}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)","\\(\\dfrac{5}{3}\\)"],ans:1,topic:"IDENT",exp:"Opposite=3, adjacent=4, hypotenuse=5, \\(\\sin\\alpha = \\dfrac{3}{5}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"If \\(\\sin\\alpha = \\dfrac{5}{13}\\) (acute), then \\(\\tan\\alpha =\\) ?",opts:["\\(\\dfrac{5}{12}\\)","\\(\\dfrac{12}{5}\\)","\\(\\dfrac{5}{13}\\)","\\(\\dfrac{13}{12}\\)"],ans:0,topic:"IDENT",exp:"Cos = 12/13, tan = 5/12.",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Simplify: \\(\\dfrac{1 - \\sin^2\\alpha}{\\cos^2\\alpha}\\) (assuming \\(\\cos\\alpha \\neq 0\\)).",opts:["\\(\\sin^2\\alpha\\)","\\(\\cos^2\\alpha\\)","\\(\\tan^2\\alpha\\)","\\(1\\)"],ans:3,topic:"IDENT",exp:"\\(\\dfrac{\\cos^2\\alpha}{\\cos^2\\alpha} = 1\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Triangle with sides 6, 8, 10 is:",opts:["Right at C=90°","Right at A=90°","Acute","Obtuse"],ans:0,topic:"COSINE",exp:"\\(6^2+8^2=36+64=100=10^2\\). Góc C vuông.",review:"Ôn lại mục V — Nhận dạng tam giác"},
+      {q:"Triangle: \\(a=7,\\ b=8,\\ c=9\\). \\(\\cos A =\\) ?",opts:["\\(\\dfrac{1}{3}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{2}{3}\\)","\\(\\dfrac{3}{4}\\)"],ans:2,topic:"COSINE",exp:"\\(\\cos A = \\dfrac{64+81-49}{144} = \\dfrac{2}{3}\\).",review:"Ôn lại mục V — Hệ quả định lý Cosin"},
+      {q:"Circumradius \\(R\\): \\(a=10,\\ A=30°\\). \\(R =\\) ?",opts:["\\(5\\)","\\(10\\)","\\(15\\)","\\(20\\)"],ans:1,topic:"SINE",exp:"\\(R = \\dfrac{10}{2\\cdot 0.5}=10\\).",review:"Ôn lại mục IV — Bán kính ngoại tiếp"},
+      {q:"If \\(\\cos\\alpha = -\\dfrac{3}{5}\\) (\\(90°<\\alpha<180°\\)), then \\(\\sin\\alpha =\\) ?",opts:["\\(\\dfrac{4}{5}\\)","\\(-\\dfrac{4}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(-\\dfrac{3}{5}\\)"],ans:0,topic:"IDENT",exp:"\\(\\alpha\\) ở Q2, sin dương: \\(\\sqrt{1-9/25}=\\dfrac{4}{5}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"If \\(\\cos\\alpha = -\\dfrac{4}{5}\\) (\\(90°<\\alpha<180°\\)), then \\(\\tan\\alpha =\\) ?",opts:["\\(\\dfrac{3}{4}\\)","\\(-\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)","\\(-\\dfrac{3}{4}\\)"],ans:3,topic:"IDENT",exp:"Sin = 3/5, cos = -4/5, tan = -3/4.",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Triangle: \\(a=8,\\ b=10,\\ A=30°\\). How many solutions?",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(3\\)"],ans:2,topic:"SINE",exp:"\\(\\sin B = \\dfrac{10\\cdot 0.5}{8} = 0.625 < 1\\). \\(b>a\\) → 2 nghiệm.",review:"Ôn lại mục IV — Trường hợp SSA"},
+      {q:"Heron: sides 3, 4, 5. Area = ?",opts:["\\(3\\)","\\(6\\)","\\(10\\)","\\(12\\)"],ans:1,topic:"AREA",exp:"\\(p=6\\), \\(S=\\sqrt{6\\cdot 3\\cdot 2\\cdot 1}=6\\).",review:"Ôn lại mục VI — Heron"},
+      {q:"Heron: sides 5, 5, 6. Area = ?",opts:["\\(10\\)","\\(11\\)","\\(12\\)","\\(15\\)"],ans:2,topic:"AREA",exp:"\\(p=8\\), \\(S=\\sqrt{8\\cdot 3\\cdot 3\\cdot 2}=12\\).",review:"Ôn lại mục VI — Heron"},
+      {q:"Two sides 8, 10, included angle 60°. Area = ?",opts:["\\(10\\sqrt{3}\\)","\\(15\\sqrt{3}\\)","\\(40\\sqrt{3}\\)","\\(20\\sqrt{3}\\)"],ans:3,topic:"AREA",exp:"\\(S=\\dfrac{1}{2}\\cdot 8\\cdot 10\\cdot\\dfrac{\\sqrt{3}}{2}=20\\sqrt{3}\\).",review:"Ôn lại mục VI — Diện tích tam giác"},
+      {q:"\\(\\sin 30°\\cdot\\cos 30° =\\) ?",opts:["\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{\\sqrt{3}}{4}\\)","\\(\\dfrac{1}{4}\\)","\\(\\dfrac{1}{2}\\)"],ans:1,topic:"TRIG",exp:"\\(\\dfrac{1}{2}\\cdot\\dfrac{\\sqrt{3}}{2}=\\dfrac{\\sqrt{3}}{4}\\).",review:"Ôn lại mục I — Bảng giá trị"},
+      {q:"\\(1 + \\tan^2\\alpha =\\) ? (assuming \\(\\cos\\alpha \\neq 0\\))",opts:["\\(\\sin^2\\alpha\\)","\\(\\dfrac{1}{\\sin^2\\alpha}\\)","\\(\\dfrac{1}{\\cos^2\\alpha}\\)","\\(\\tan^2\\alpha\\)"],ans:2,topic:"IDENT",exp:"\\(1+\\tan^2\\alpha = \\dfrac{1}{\\cos^2\\alpha}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Triangle \\(ABC\\): \\(A=45°,\\ B=60°,\\ a=10\\). \\(b =\\) ?",opts:["\\(5\\sqrt{6}\\)","\\(10\\sqrt{6}\\)","\\(5\\sqrt{2}\\)","\\(10\\sqrt{2}\\)"],ans:0,topic:"SINE",exp:"\\(b = \\dfrac{10\\sin 60°}{\\sin 45°} = \\dfrac{10(\\sqrt{3}/2)}{\\sqrt{2}/2} = 5\\sqrt{6}\\).",review:"Ôn lại mục IV — Định lý Sin"},
+      {q:"Triangle: \\(a=3,\\ b=4,\\ C=90°\\). \\(c =\\) ?",opts:["\\(4\\)","\\(5\\)","\\(6\\)","\\(7\\)"],ans:1,topic:"COSINE",exp:"\\(c^2 = 9+16=25\\), \\(c=5\\).",review:"Ôn lại mục V — Định lý Cosin"},
+      {q:"Simplify: \\((\\sin\\alpha + \\cos\\alpha)^2\\)",opts:["\\(\\sin^2\\alpha + \\cos^2\\alpha\\)","\\(2\\sin\\alpha\\cos\\alpha\\)","\\(1 + 2\\sin\\alpha\\cos\\alpha\\)","\\(1 - 2\\sin\\alpha\\cos\\alpha\\)"],ans:2,topic:"IDENT",exp:"\\(= 1+2\\sin\\alpha\\cos\\alpha\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"If \\(\\sin\\alpha = \\cos\\alpha\\) (acute), then \\(\\alpha =\\) ?",opts:["\\(30°\\)","\\(45°\\)","\\(60°\\)","\\(90°\\)"],ans:1,topic:"TRIG",exp:"\\(\\tan\\alpha=1 \\Rightarrow \\alpha=45°\\).",review:"Ôn lại mục I — Bảng giá trị"},
+      {q:"Median to side \\(a\\): \\(m_a^2 =\\) ?",opts:["\\(\\dfrac{2b^2+2c^2-a^2}{4}\\)","\\(\\dfrac{b^2+c^2-a^2}{2}\\)","\\(\\dfrac{b^2+c^2+a^2}{4}\\)","\\(\\dfrac{b^2+c^2}{2}\\)"],ans:0,topic:"AREA",exp:"\\(m_a^2 = \\dfrac{2b^2+2c^2-a^2}{4}\\).",review:"Ôn lại mục VI — Trung tuyến"},
+      {q:"\\(\\sin(180° + \\alpha) =\\) ?",opts:["\\(\\sin\\alpha\\)","\\(\\cos\\alpha\\)","\\(-\\cos\\alpha\\)","\\(-\\sin\\alpha\\)"],ans:3,topic:"RELATED",exp:"\\(\\sin(180°+\\alpha) = -\\sin\\alpha\\).",review:"Ôn lại mục II — Hai góc hơn kém 180°"},
+      {q:"In triangle \\(30°-60°-90°\\), ratio of sides opposite to those angles is:",opts:["\\(1:1:1\\)","\\(1:\\sqrt{3}:2\\)","\\(1:\\sqrt{2}:2\\)","\\(\\sqrt{3}:1:2\\)"],ans:1,topic:"TRIG",exp:"Tỉ số: \\(1:\\sqrt{3}:2\\).",review:"Ôn lại mục I — Tam giác đặc biệt"},
+      {q:"Triangle \\(a=8,\\ b=15,\\ c=17\\). Is it right?",opts:["Yes","No, acute","No, obtuse","Not a triangle"],ans:0,topic:"COSINE",exp:"\\(8^2+15^2=64+225=289=17^2\\). Vuông tại C.",review:"Ôn lại mục V — Nhận dạng tam giác"},
+      {q:"If \\(a^2 < b^2 + c^2\\), angle \\(A\\) is:",opts:["Acute","Right","Obtuse","Cannot determine"],ans:0,topic:"COSINE",exp:"\\(\\cos A > 0 \\Rightarrow A\\) nhọn.",review:"Ôn lại mục V — Nhận dạng góc"}
+    ]
+  },
+  3: {
+    name: "Bộ 3 — Advanced",
+    desc: "Bài toán hỗn hợp: trung tuyến, phân giác, định lý Cosin–Sin kết hợp, tam giác đặc biệt, tối ưu, diện tích Heron, ứng dụng thực tế.",
+    questions: [
+      {q:"Triangle: \\(a=7,\\ b=8,\\ c=9\\). \\(\\cos C =\\) ?",opts:["\\(\\dfrac{1}{7}\\)","\\(\\dfrac{1}{3}\\)","\\(\\dfrac{2}{7}\\)","\\(\\dfrac{3}{7}\\)"],ans:2,topic:"COSINE",exp:"\\(\\cos C = \\dfrac{49+64-81}{2\\cdot 7\\cdot 8} = \\dfrac{32}{112} = \\dfrac{2}{7}\\).",review:"Ôn lại mục V — Hệ quả Cosin"},
+      {q:"Angle bisector: \\(AB=6,\\ AC=9,\\ BC=10\\). \\(BD =\\) ?",opts:["\\(3\\)","\\(4\\)","\\(5\\)","\\(6\\)"],ans:1,topic:"AREA",exp:"\\(BD/DC = 6/9 = 2/3\\). \\(BD = \\dfrac{2}{5}\\cdot 10 = 4\\).",review:"Ôn lại mục VI — Đường phân giác"},
+      {q:"Simplify: \\((1+\\tan^2\\alpha)(1-\\sin^2\\alpha)\\)",opts:["\\(1\\)","\\(\\sin^2\\alpha\\)","\\(\\cos^2\\alpha\\)","\\(\\tan^2\\alpha\\)"],ans:0,topic:"IDENT",exp:"\\(\\dfrac{1}{\\cos^2\\alpha}\\cdot\\cos^2\\alpha = 1\\).",review:"Ôn lại mục III — Đẳng thức"},
+      {q:"If \\(\\tan\\alpha = 2\\) (acute), \\(\\dfrac{\\sin\\alpha+\\cos\\alpha}{\\sin\\alpha-\\cos\\alpha} =\\) ?",opts:["\\(-3\\)","\\(-1\\)","\\(3\\)","\\(1\\)"],ans:2,topic:"IDENT",exp:"\\(\\dfrac{\\tan\\alpha+1}{\\tan\\alpha-1} = 3\\).",review:"Ôn lại mục III — Đẳng thức tan"},
+      {q:"Two sides 6 and 8, included angle 60°. Area = ?",opts:["\\(12\\)","\\(24\\)","\\(24\\sqrt{3}\\)","\\(12\\sqrt{3}\\)"],ans:3,topic:"AREA",exp:"\\(S = \\dfrac{1}{2}\\cdot 6\\cdot 8\\cdot\\dfrac{\\sqrt{3}}{2} = 12\\sqrt{3}\\).",review:"Ôn lại mục VI — Diện tích"},
+      {q:"\\(\\sin 240° =\\) ?",opts:["\\(\\dfrac{\\sqrt{3}}{2}\\)","\\(-\\dfrac{1}{2}\\)","\\(-\\dfrac{\\sqrt{3}}{2}\\)","\\(\\dfrac{1}{2}\\)"],ans:2,topic:"RELATED",exp:"\\(\\sin 240° = -\\sin 60° = -\\dfrac{\\sqrt{3}}{2}\\).",review:"Ôn lại mục II — Góc hơn kém 180°"},
+      {q:"Triangle: \\(a=13,\\ b=14,\\ c=15\\). Area (Heron) = ?",opts:["\\(72\\)","\\(84\\)","\\(96\\)","\\(108\\)"],ans:1,topic:"AREA",exp:"\\(p=21\\), \\(S=\\sqrt{21\\cdot 8\\cdot 7\\cdot 6}=\\sqrt{7056}=84\\).",review:"Ôn lại mục VI — Heron"},
+      {q:"Triangle: \\(a=13,\\ b=14,\\ c=15\\). \\(\\cos A =\\) ?",opts:["\\(\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)","\\(\\dfrac{5}{13}\\)","\\(\\dfrac{12}{13}\\)"],ans:0,topic:"COSINE",exp:"\\(\\cos A = \\dfrac{196+225-169}{2\\cdot 14\\cdot 15} = \\dfrac{252}{420} = \\dfrac{3}{5}\\).",review:"Ôn lại mục V — Hệ quả Cosin"},
+      {q:"For \\(a=6,\\ b=8,\\ c=10\\), sum of squares of medians \\(m_a^2+m_b^2+m_c^2 =\\) ?",opts:["\\(100\\)","\\(125\\)","\\(150\\)","\\(200\\)"],ans:2,topic:"AREA",exp:"\\(=\\dfrac{3}{4}(36+64+100) = \\dfrac{3}{4}\\cdot 200 = 150\\).",review:"Ôn lại mục VI — Trung tuyến"},
+      {q:"If \\(\\sin\\alpha + \\cos\\alpha = \\sqrt{2}\\) (acute), \\(\\sin\\alpha\\cdot\\cos\\alpha =\\) ?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(\\dfrac{\\sqrt{2}}{2}\\)"],ans:1,topic:"IDENT",exp:"Bình phương: \\(1+2\\sin\\alpha\\cos\\alpha=2 \\Rightarrow \\sin\\alpha\\cos\\alpha=\\dfrac{1}{2}\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Triangle: \\(A=30°,\\ B=45°,\\ C=105°,\\ a=10\\). \\(b =\\) ?",opts:["\\(5\\sqrt{2}\\)","\\(10\\sqrt{3}\\)","\\(5\\sqrt{6}\\)","\\(10\\sqrt{2}\\)"],ans:3,topic:"SINE",exp:"\\(b = \\dfrac{10\\sin 45°}{\\sin 30°} = 10\\sqrt{2}\\).",review:"Ôn lại mục IV — Định lý Sin"},
+      {q:"Triangle: \\(a=8,\\ b=10,\\ A=30°\\). How many solutions?",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(3\\)"],ans:2,topic:"SINE",exp:"\\(\\sin B = 10\\cdot 0.5/8 = 0.625 < 1\\). \\(b>a\\) → 2 nghiệm.",review:"Ôn lại mục IV — Trường hợp SSA"},
+      {q:"Triangle: \\(A=30°,\\ a=5,\\ b=10\\). How many solutions?",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(3\\)"],ans:1,topic:"SINE",exp:"\\(\\sin B = 10\\cdot 0.5/5 = 1 \\Rightarrow B=90°\\). Duy nhất 1 nghiệm.",review:"Ôn lại mục IV — Trường hợp SSA"},
+      {q:"\\(S=pr\\), \\(S=30\\), \\(p=15\\). \\(r =\\) ?",opts:["\\(2\\)","\\(3\\)","\\(4\\)","\\(5\\)"],ans:0,topic:"AREA",exp:"\\(r = S/p = 2\\).",review:"Ôn lại mục VI — Bán kính nội tiếp"},
+      {q:"Circumradius \\(R\\): \\(a=8,\\ A=60°\\). \\(R =\\) ?",opts:["\\(4\\)","\\(\\dfrac{8}{\\sqrt{3}}\\)","\\(4\\sqrt{3}\\)","\\(\\dfrac{8\\sqrt{3}}{3}\\)"],ans:3,topic:"SINE",exp:"\\(R = \\dfrac{8}{2\\cdot\\sqrt{3}/2}=\\dfrac{8}{\\sqrt{3}}=\\dfrac{8\\sqrt{3}}{3}\\).",review:"Ôn lại mục IV — Bán kính ngoại tiếp"},
+      {q:"Triangle with sides 5, 12, 13. Largest angle = ?",opts:["\\(90°\\)","\\(60°\\)","\\(120°\\)","\\(45°\\)"],ans:0,topic:"COSINE",exp:"\\(5^2+12^2=169=13^2\\). Vuông tại góc đối diện cạnh 13.",review:"Ôn lại mục V — Nhận dạng"},
+      {q:"Sides 4, 5, 7. Is the largest angle acute/right/obtuse?",opts:["Acute","Right","Obtuse","Not a triangle"],ans:2,topic:"COSINE",exp:"\\(7^2=49 > 4^2+5^2=41\\). Góc tù.",review:"Ôn lại mục V — Nhận dạng góc"},
+      {q:"Equilateral triangle side 10. Area = ?",opts:["\\(50\\)","\\(25\\sqrt{3}\\)","\\(50\\sqrt{3}\\)","\\(100\\)"],ans:1,topic:"AREA",exp:"\\(S = \\dfrac{\\sqrt{3}}{4}\\cdot 100 = 25\\sqrt{3}\\).",review:"Ôn lại mục VI — Diện tích"},
+      {q:"If \\(\\dfrac{\\sin A}{\\sin B} = \\dfrac{3}{4}\\), then \\(\\dfrac{a}{b} =\\) ?",opts:["\\(\\dfrac{3}{4}\\)","\\(\\dfrac{4}{3}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)"],ans:0,topic:"SINE",exp:"Theo định lý Sin: \\(a/b = \\sin A/\\sin B = 3/4\\).",review:"Ôn lại mục IV — Định lý Sin"},
+      {q:"\\((\\sin^2 30° + \\cos^2 30°)^2 =\\) ?",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(2\\)"],ans:2,topic:"IDENT",exp:"\\(1^2 = 1\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"\\(a=10\\), \\(R=8\\). \\(\\sin A =\\) ?",opts:["\\(\\dfrac{3}{8}\\)","\\(\\dfrac{5}{8}\\)","\\(\\dfrac{3}{4}\\)","\\(\\dfrac{7}{8}\\)"],ans:1,topic:"SINE",exp:"\\(\\sin A = a/(2R) = 10/16 = 5/8\\).",review:"Ôn lại mục IV — Định lý Sin"},
+      {q:"Triangle: \\(a=7,\\ b=8,\\ c=9\\). Angle \\(A\\) (rounded to nearest degree) is:",opts:["\\(40°\\)","\\(48°\\)","\\(55°\\)","\\(60°\\)"],ans:1,topic:"COSINE",exp:"\\(\\cos A = 2/3\\), \\(A=\\arccos(2/3) \\approx 48.2°\\).",review:"Ôn lại mục V — Hệ quả Cosin"},
+      {q:"Triangle: \\(a=10,\\ b=12,\\ c=14\\). Sum of squares of medians = ?",opts:["\\(220\\)","\\(275\\)","\\(330\\)","\\(385\\)"],ans:2,topic:"AREA",exp:"\\(=\\dfrac{3}{4}(100+144+196) = \\dfrac{3}{4}\\cdot 440 = 330\\).",review:"Ôn lại mục VI — Trung tuyến"},
+      {q:"Triangle: \\(a=5,\\ b=7,\\ c=9\\). Angle \\(C\\) is:",opts:["Acute","Right","Obtuse","Not a triangle"],ans:2,topic:"COSINE",exp:"\\(9^2=81 > 5^2+7^2=74\\). Góc tù tại C.",review:"Ôn lại mục V — Nhận dạng góc"},
+      {q:"Triangle: sides 8, 15, 17. \\(\\cos B\\) (B đối diện cạnh 15) = ?",opts:["\\(\\dfrac{8}{17}\\)","\\(\\dfrac{15}{17}\\)","\\(\\dfrac{5}{17}\\)","\\(\\dfrac{17}{8}\\)"],ans:0,topic:"COSINE",exp:"\\(\\cos B = \\dfrac{64+289-225}{2\\cdot 8\\cdot 17} = \\dfrac{128}{272} = \\dfrac{8}{17}\\).",review:"Ôn lại mục V — Hệ quả Cosin"},
+      {q:"If \\(\\sin\\alpha = \\dfrac{3}{5}\\) and \\(\\cos\\alpha < 0\\), then \\(\\alpha\\) is in:",opts:["Q1 (0°–90°)","Q2 (90°–180°)","Q3","Q4"],ans:1,topic:"IDENT",exp:"Sin > 0, cos < 0 → góc ở Q2 (90°–180°).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Simplify: \\((\\sin\\alpha + \\cos\\alpha)^2 + (\\sin\\alpha - \\cos\\alpha)^2\\)",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(2\\sin^2\\alpha\\)"],ans:2,topic:"IDENT",exp:"\\((1+2sc)+(1-2sc) = 2\\).",review:"Ôn lại mục III — Đẳng thức cơ bản"},
+      {q:"Circumradius \\(R\\): \\(a=6,\\ A=45°\\). \\(R =\\) ?",opts:["\\(3\\)","\\(3\\sqrt{2}\\)","\\(6\\sqrt{2}\\)","\\(12\\)"],ans:1,topic:"SINE",exp:"\\(R = \\dfrac{6}{2\\cdot\\sqrt{2}/2}=\\dfrac{6}{\\sqrt{2}} = 3\\sqrt{2}\\).",review:"Ôn lại mục IV — Bán kính ngoại tiếp"},
+      {q:"Triangle sides 6, 8, 10. Inradius \\(r =\\) ?",opts:["\\(2\\)","\\(3\\)","\\(4\\)","\\(5\\)"],ans:0,topic:"AREA",exp:"\\(S=24\\), \\(p=12\\), \\(r=S/p=2\\).",review:"Ôn lại mục VI — Bán kính nội tiếp"},
+      {q:"Two sides 5 and 8, included angle 120°. Third side \\(c =\\) ?",opts:["\\(\\sqrt{89}\\)","\\(\\sqrt{109}\\)","\\(\\sqrt{129}\\)","\\(\\sqrt{149}\\)"],ans:2,topic:"COSINE",exp:"\\(c^2 = 25+64-2(5)(8)\\cos 120° = 89+40=129\\). \\(c=\\sqrt{129}\\).",review:"Ôn lại mục V — Định lý Cosin"}
+    ]
+  }
+};
+
+const TEST_DURATION = 45 * 60;
+let testState = null;
+let testTimerInterval = null;
+
+/* -------- Render set selector -------- */
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(k=>{
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = () => startSetTest(parseInt(k));
+    card.innerHTML = `
+      <div class="set-badge">BỘ ${k}</div>
+      <h4>${s.name}</h4>
+      <p>${s.desc}</p>
+      <div class="set-meta">
+        <span><strong>30</strong> câu</span>
+        <span><strong>45:00</strong> phút</span>
+        <span><strong>A–D</strong></span>
+      </div>
+      <div class="set-start">▶ Bắt đầu làm bài →</div>`;
+    c.appendChild(card);
+  });
+}
+
+function startSetTest(setNum){
+  testState = {setNum,current:0,answers:new Array(30).fill(null),timeLeft:TEST_DURATION,submitted:false};
+  document.getElementById('satSetSelector').style.display = 'none';
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satTestScreen').style.display = 'block';
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(()=>{
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){clearInterval(testTimerInterval);testTimerInterval=null;submitTest(true);}
+  },1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = `${m}:${s}`;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 300) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = () => { testState.current = i; renderTestQuestion(); renderNavGrid(); };
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  document.querySelectorAll('#navGrid .nav-cell').forEach((c,i)=>{
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(a=>a!==null).length;
+  document.getElementById('testProgress').textContent = `Câu ${testState.current+1} / 30 · Đã trả lời ${answered}/30`;
+}
+
+function renderTestQuestion(){
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach((o,i)=>{
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = `<span class="letter">${letterMap[i]}</span><span class="opt-text">${o}</span>`;
+    b.onclick = () => selectTestOption(i);
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement){renderMathInElement(document.getElementById('testQuestionCard'),{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach((o,i)=>o.classList.toggle('selected', i === optIdx));
+  updateNavStatus();
+}
+
+function goToQuestion(i){if(i<0||i>29) return;testState.current = i;renderTestQuestion();}
+
+document.getElementById('btnPrev').onclick = ()=>goToQuestion(testState.current-1);
+document.getElementById('btnNext').onclick = ()=>{if(testState.current === 29){submitTest(false);}else{goToQuestion(testState.current+1);}};
+document.getElementById('btnQuitTest').onclick = ()=>{
+  if(confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.')){
+    if(testTimerInterval) clearInterval(testTimerInterval);
+    testTimerInterval = null; testState = null;
+    document.getElementById('satTestScreen').style.display = 'none';
+    document.getElementById('satSetSelector').style.display = 'grid';
+  }
+};
+document.getElementById('btnSubmitTest').onclick = ()=>submitTest(false);
+
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+  if(!auto){
+    const unanswered = testState.answers.filter(a=>a===null).length;
+    if(unanswered > 0){
+      if(!confirm(`Bạn còn ${unanswered} câu chưa trả lời. Vẫn nộp bài?`)) return;
+    }else{
+      if(!confirm('Nộp bài và xem kết quả?')) return;
+    }
+  }
+  testState.submitted = true;
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  testTimerInterval = null;
+  document.getElementById('satTestScreen').style.display = 'none';
+  renderResult();
+  window.scrollTo({top:0,behavior:'smooth'});
+  playFanfare();
+}
+
+/* ============================================================
+   ENHANCED RESULT
+============================================================ */
+function renderResult(){
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(k=>topicStat[k]={correct:0,total:0});
+  const wrongList = [];
+
+  questions.forEach((item,i)=>{
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){unanswered++; wrongList.push({idx:i, item, yourAns:null});}
+    else if(ans === item.ans){correct++; topicStat[item.topic].correct++;}
+    else{wrong++; wrongList.push({idx:i, item, yourAns:ans});}
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct/total*100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = `${Math.floor(avgTime/60)}:${String(avgTime%60).padStart(2,'0')}`;
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){level="XUẤT SẮC";levelColor="#4CAF50";levelIcon="🏆";
+    levelDesc="Kiến thức lượng giác của em rất vững vàng, phản xạ chính xác. Em đã sẵn sàng chinh phục điểm cao trong kỳ thi Digital SAT thực tế!";
+    levelAdvice="Duy trì phong độ bằng cách luyện các bộ đề khó hơn. Tập trung vào tốc độ và độ chính xác cho dạng bài tổng hợp.";
+  } else if(pct >= 75){level="TỐT";levelColor="#2C5AA0";levelIcon="⭐";
+    levelDesc="Em nắm tốt kiến thức cơ bản và nhiều dạng nâng cao. Chỉ còn vài chủ đề cần tinh chỉnh để đạt điểm tối đa.";
+    levelAdvice="Tập trung khắc phục các chủ đề dưới 80% để nâng điểm SAT Math ước lượng lên mức 700+. Luyện thêm dạng bài hỗn hợp Sin–Cosin.";
+  } else if(pct >= 60){level="KHÁ";levelColor="#E8A317";levelIcon="📈";
+    levelDesc="Em có nền tảng khá tốt nhưng còn sai sót ở dạng trung bình và nâng cao. Cần luyện tập có hệ thống hơn.";
+    levelAdvice="Luyện thêm dạng bài tổng hợp và ứng dụng thực tế. Đặc biệt chú trọng các chủ đề có tỉ lệ đúng dưới 60%.";
+  } else if(pct >= 40){level="TRUNG BÌNH";levelColor="#FF9800";levelIcon="📚";
+    levelDesc="Em có một số kiến thức nền tảng nhưng còn nhiều lỗ hổng. Cần củng cố lý thuyết trước khi luyện nâng cao.";
+    levelAdvice="Quay lại ôn kỹ mục I, III, IV trong phần Kiến thức. Làm lại Nhóm 1 của phần Luyện tập đến khi đạt ≥ 80%.";
+  } else {level="CẦN CỐ GẮNG";levelColor="#E53935";levelIcon="🔧";
+    levelDesc="Em cần xây dựng lại nền tảng từ đầu. Đừng nản — hãy bắt đầu từ những dạng cơ bản nhất.";
+    levelAdvice="Đọc kỹ phần Kiến thức, ghi nhớ bảng giá trị lượng giác và các đẳng thức cơ bản. Làm chậm và kỹ từng dạng ở Nhóm 1.";
+  }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){timeEval="Quản lý thời gian xuất sắc";timeIcon="🚀";timeColor="#4CAF50";}
+  else if(timeUsed <= TEST_DURATION*0.9){timeEval="Quản lý thời gian tốt";timeIcon="⏱️";timeColor="#2C5AA0";}
+  else if(timeUsed < TEST_DURATION){timeEval="Sát giờ — cần tăng tốc";timeIcon="⏰";timeColor="#E8A317";}
+  else{timeEval="Hết giờ";timeIcon="🚨";timeColor="#E53935";}
+
+  const topicList = Object.keys(topicStat)
+    .filter(k=>topicStat[k].total>0)
+    .map(k=>({key:k, name:TOPICS[k], correct:topicStat[k].correct, total:topicStat[k].total, pct:Math.round(topicStat[k].correct/topicStat[k].total*100)}))
+    .sort((a,b)=>a.pct-b.pct);
+
+  const weakTopics = topicList.filter(t=>t.pct<60);
+  const mediumTopics = topicList.filter(t=>t.pct>=60 && t.pct<80);
+  const strongTopics = topicList.filter(t=>t.pct>=80);
+
+  let roadmapPhases = [];
+  if(weakTopics.length > 0){
+    roadmapPhases.push({
+      phase:1, title:"Củng cố kiến thức nền tảng", time:"1–3 ngày",
+      items:weakTopics.map(t=>`<strong>${t.name}</strong> (${t.correct}/${t.total} = ${t.pct}%) — ${TOPIC_RECOMMENDATIONS[t.key]}`),
+      actions:[{text:"📖 Ôn lý thuyết",tab:"knowledge"},{text:"✏️ Luyện nhóm cơ bản",tab:"practice"}]
+    });
+  }
+  if(mediumTopics.length > 0){
+    roadmapPhases.push({
+      phase:2, title:"Luyện tập nâng cao", time:"3–5 ngày",
+      items:mediumTopics.map(t=>`<strong>${t.name}</strong> (${t.correct}/${t.total} = ${t.pct}%) — Cần thêm bài tập trung bình–khó để nâng tỉ lệ đúng lên ≥ 80%.`),
+      actions:[{text:"✏️ Luyện nhóm trung bình",tab:"practice"},{text:"🔄 Làm lại bộ đề này",action:"restart"}]
+    });
+  }
+  roadmapPhases.push({
+    phase:3, title:strongTopics.length>0?"Duy trì & mở rộng":"Luyện đề tổng hợp", time:"Liên tục",
+    items:strongTopics.length>0
+      ? strongTopics.map(t=>`<strong>${t.name}</strong> (${t.correct}/${t.total} = ${t.pct}%) — Duy trì phong độ, thử sức bài khó hơn để nâng tốc độ và độ chính xác.`)
+      : ["Sau khi củng cố nền tảng, hãy luyện các bộ đề khác để làm quen dạng bài đa dạng."],
+    actions:[{text:"📚 Chọn bộ khác",action:"back"},{text:"⏱️ Luyện đề khác",tab:"sat"}]
+  });
+
+  const c = document.getElementById('satResultScreen');
+  c.innerHTML = `
+    <div class="result-hero">
+      <div>
+        <h2>🎉 Hoàn thành ${SAT_SETS[setNum].name}!</h2>
+        <p>Bạn đã làm ${total} câu trong ${tm}:${ts}. ${auto?'⏰ Hết giờ!':''} ${unanswered>0?`Còn ${unanswered} câu chưa trả lời.`:''}</p>
+      </div>
+      <div class="result-score">
+        <div class="num">${correct}</div>
+        <div class="den">/ ${total} câu đúng</div>
+        <div class="pct">${pct}%</div>
+      </div>
+    </div>
+
+    <div class="level-banner" style="border-left-color:${levelColor}">
+      <div class="level-icon" style="background:${levelColor}">${levelIcon}</div>
+      <div class="level-content">
+        <h3 style="color:${levelColor}">Đánh giá năng lực: ${level}</h3>
+        <p>${levelDesc}</p>
+        <div class="level-advice"><strong>💡 Định hướng:</strong> ${levelAdvice}</div>
+      </div>
+    </div>
+
+    <div class="result-stats">
+      <div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">${correct}</div><div class="sub">Chiếm ${pct}%</div></div>
+      <div class="stat-box red"><div class="label">❌ Sai</div><div class="value">${wrong}</div><div class="sub">Cần xem lại</div></div>
+      <div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">${unanswered}</div><div class="sub">Chưa trả lời</div></div>
+      <div class="stat-box"><div class="label">🎯 SAT Math ước lượng</div><div class="value">${estimatedSAT}</div><div class="sub">/ 800 điểm</div></div>
+    </div>
+
+    <div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div>
+    <div class="time-analysis">
+      <div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content">
+        <div class="tb-label">Tổng thời gian</div>
+        <div class="tb-value">${tm}:${ts}</div>
+        <div class="tb-desc">/ 45:00</div>
+      </div></div>
+      <div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content">
+        <div class="tb-label">Trung bình / câu</div>
+        <div class="tb-value">${avgTimeStr}</div>
+        <div class="tb-desc">Mục tiêu: ≤ 1:30</div>
+      </div></div>
+      <div class="time-block"><div class="tb-icon" style="background:${timeColor}22;color:${timeColor}">${timeIcon}</div><div class="tb-content">
+        <div class="tb-label">Đánh giá</div>
+        <div class="tb-value" style="color:${timeColor};font-size:15px">${timeEval}</div>
+        <div class="tb-desc">${timeUsed<TEST_DURATION?`Còn dư ${Math.floor((TEST_DURATION-timeUsed)/60)}:${String((TEST_DURATION-timeUsed)%60).padStart(2,'0')}`:'Đã dùng hết thời gian'}</div>
+      </div></div>
+    </div>
+
+    <div class="result-section-title"><span class="icon">📊</span> Phân tích chi tiết theo chủ đề</div>
+    <table class="topic-table">
+      <thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead>
+      <tbody>
+        ${topicList.map(t=>{
+          let cls='', status='', statusColor='';
+          if(t.pct>=80){status='✅ Vững';statusColor='#4CAF50';}
+          else if(t.pct>=60){cls='warn';status='⚠ Cần luyện';statusColor='#E8A317';}
+          else {cls='bad';status='🔴 Yếu';statusColor='#E53935';}
+          return `<tr>
+            <td><strong>${t.name}</strong></td>
+            <td><div class="topic-bar-cell">
+              <div class="topic-bar"><div class="topic-bar-fill ${cls}" style="width:${t.pct}%"></div></div>
+              <span style="min-width:44px;font-weight:700;color:var(--sat-gray)">${t.pct}%</span>
+            </div></td>
+            <td style="text-align:right"><span class="topic-score">${t.correct}/${t.total}</span></td>
+            <td style="text-align:center"><strong style="color:${statusColor};font-size:13px">${status}</strong></td>
+          </tr>
+          <tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8">
+            <div class="topic-recommend">📌 <strong>Gợi ý:</strong> ${TOPIC_RECOMMENDATIONS[t.key]}</div>
+          </td></tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+
+    <div class="roadmap">
+      <h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3>
+      <p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng để khắc phục điểm yếu và phát huy điểm mạnh:</p>
+      ${roadmapPhases.map(p=>`
+        <div class="roadmap-phase phase-${p.phase}">
+          <div class="phase-num">${p.phase}</div>
+          <div class="phase-content">
+            <h4>Giai đoạn ${p.phase}: ${p.title} <span class="phase-time">⏳ ${p.time}</span></h4>
+            <ul>${p.items.map(it=>`<li>${it}</li>`).join('')}</ul>
+            <div class="phase-actions">
+              ${p.actions.map(a=>{
+                if(a.action==='restart') return `<button class="btn btn-primary btn-sm" onclick="restartSameSet()">${a.text}</button>`;
+                if(a.action==='back') return `<button class="btn btn-outline btn-sm" onclick="backToSetSelector()">${a.text}</button>`;
+                return `<button class="btn btn-outline btn-sm" onclick="switchTab('${a.tab}')">${a.text}</button>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${wrongList.length > 0 ? `
+    <div class="result-section-title"><span class="icon" style="background:#fdeaea;color:var(--sat-red)">🔍</span> Phân tích chi tiết ${wrongList.length} câu sai / bỏ trống</div>
+    ${wrongList.map(w=>{
+      const item = w.item;
+      const cls = w.yourAns === null ? 'unanswered' : '';
+      const yourText = w.yourAns === null ? '— Không trả lời —' : item.opts[w.yourAns];
+      return `<div class="wrong-item ${cls}">
+        <div class="wrong-head">
+          <div class="wrong-num">${w.idx+1}</div>
+          <div class="wrong-q">
+            ${item.q}
+            <div><span class="topic-tag">${TOPICS[item.topic]}</span></div>
+          </div>
+        </div>
+        <div class="ans-row">
+          <div class="ans-box your">
+            <div class="lbl">Bạn chọn</div>
+            <div class="val">${w.yourAns === null ? '—' : letterMap[w.yourAns]+'. '}${yourText}</div>
+          </div>
+          <div class="ans-box correct">
+            <div class="lbl">Đáp án đúng</div>
+            <div class="val">${letterMap[item.ans]}. ${item.opts[item.ans]}</div>
+          </div>
+        </div>
+        <div class="exp-box">
+          <div class="lbl">🧮 Lời giải chi tiết</div>
+          ${item.exp}
+        </div>
+        <div class="review-box">📖 ${item.review}</div>
+      </div>`;
+    }).join('')}` : `
+    <div class="roadmap" style="border-left-color:var(--sat-green)">
+      <h3>🎯 Tất cả câu trả lời đều chính xác!</h3>
+      <p style="font-size:14px;color:var(--sat-gray)">Không có câu nào sai. Em đã sẵn sàng cho các bộ đề khó hơn!</p>
+    </div>`}
+
+    <div class="result-actions">
+      <button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại ${SAT_SETS[setNum].name}</button>
+      <button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button>
+      <button class="btn btn-outline" onclick="switchTab('knowledge')">📖 Ôn lại lý thuyết</button>
+      <button class="btn btn-outline" onclick="switchTab('practice')">✏️ Luyện tập thêm</button>
+    </div>
+  `;
+  if(window.renderMathInElement){renderMathInElement(c,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+
+function restartSameSet(){
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderSatSetSelector();
+
+window.addEventListener('load',()=>{
+  if(window.renderMathInElement){
+    renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+  }
+});
+</script>
+</body>
+</html>
